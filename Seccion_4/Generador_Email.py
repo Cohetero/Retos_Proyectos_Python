@@ -11,7 +11,7 @@ def generar_email(nombre: str, empresa: str, dominio: str = ".com.mx") -> str:
     empresa_normalizado = empresa.strip().replace(' ', '').lower()          #  y se convierte en minusculas
     return f"{nombre_normalizado}@{empresa_normalizado}{dominio}"
 
-# Función para valir si los datos de entradas no son vacios
+# Función para validar si los datos de entradas no son vacios
 def pedir_dato(campo: str) -> str:
     while True:
         valor = input(f"{campo}: ").strip()

@@ -6,7 +6,7 @@
 #   * Dificultad (Facil, Media, Alta)
 # Mandar a imprimir la receta
 
-# Función para valir si los datos de entradas no son vacios
+# Función para validar si los datos de entradas no son vacios
 def pedir_dato(campo: str) -> str:
     while True:
         valor = input(f"{campo}: ").strip()
