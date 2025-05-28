@@ -19,9 +19,24 @@ def pedir_dato(campo: str) -> str:
             return valor
         print("⚠️  Este campo no puede estar vacío. Intenta de nuevo.")
 
+# Función para elegir el dominio
+def elegir_dominio() -> str:
+    dominios = [".com.mx", ".com", ".org", ".net"]      # Lista para elegir los dominios
+    print("\nSelecciona un dominio:")
+    for i, d in enumerate(dominios, 1):     # For para iterar y mostrar la lista de los dominios
+        print(f"{i}. {d}")
+    while True:
+        opcion = input("Número de dominio (por defecto 1): ").strip()
+        if not opcion:          # Si no se pone nada por default envia el primer valor de la lista
+            return dominios[0]
+        if opcion.isdigit() and 1 <= int(opcion) <= len(dominios):      # Valida que todos los caracteres sean dígitos y si la opcion esta entre el rango 1 al tamaño de la lista
+            return dominios[int(opcion) - 1]
+        print("❌ Opción no válida. Elige un número de la lista.")
+
 print(' Generador de Email '.center(80, '*'))
 nombre = pedir_dato("Nombre completo: ")
 empresa = pedir_dato("Nombre de la empresa: ")
+dominio = elegir_dominio()
 
-email = generar_email(nombre, empresa)
+email = generar_email(nombre, empresa, dominio)
 print(f'\nEmail generado: {email}')
