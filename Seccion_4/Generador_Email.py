@@ -15,7 +15,7 @@ def generar_email(nombre: str, empresa: str, dominio: str = ".com.mx") -> str:
 def pedir_dato(campo: str) -> str:
     while True:
         valor = input(f"{campo}: ").strip()
-        if valor:       # Valio si en valor no es vacio
+        if valor:       # Valida si en valor no es vacio
             return valor
         print("⚠️  Este campo no puede estar vacío. Intenta de nuevo.")
 
