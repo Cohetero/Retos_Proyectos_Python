@@ -9,7 +9,7 @@ from getpass import getpass # Oculta la contraseña al escribir
 
 # Constantes
 CORRECT_USER = "Cat_08"
-CORRECT_PASSWORD = "ILoveChatGPT"
+CORRECT_PASSWORD = "1234"
 INTENTOS_MAXIMOS = 5
 
 def pedir_dato(campo: str, ocultar: bool = False) -> str:
