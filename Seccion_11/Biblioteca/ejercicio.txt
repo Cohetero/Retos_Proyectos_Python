@@ -1,0 +1,77 @@
+Se les deja crear el siguiente sistema de Bibliotecas y cada objeto
+de la biblioteca almacena libros.
+
+Se debe aplicar la programacion orientada a objetos para resolvereste problema.
+Un libro tiene los astributos de titulo, autor y genero. Debe aplicar el
+concepto de encapsulamiento.
+
+Por otro lado una biblioteca contiene un nombre, asi como una lista de libros.
+Ademas tiene los siguientes metodos para administrar los libros:
+    * Agregar libros
+    * Buscar libros por autor
+    * Buscar libros por genero
+    * Mostrar todos los libros
+    * Mostrar un libro
+
+Ademas debe aplicar encapsulamiento.
+Por ultimo, se debe crear un script para poner a prueba las clases creadas
+
+* Agregar mejoras
+5. gregar campos opcionales
+    Puedes permitir que el usuario añada:
+
+        * Año de publicación
+        * ISBN
+        * Número de páginas
+
+Y mostrarlos si existen. ¡Te da práctica con parámetros opcionales!
+
+🎁 ¿Quieres un reto extra?
+Te puedo dar una extensión como:
+
+    * Buscar por múltiples géneros al mismo tiempo
+    * Ordenar los libros por título o autor
+    * Implementar eliminación o edición de libros
+
+🌟 Retos extra que vas a implementar
+✅ 1. Buscar por múltiples géneros
+    
+    * Permitir que el usuario ingrese varios géneros separados por coma (por ejemplo: fantasía, aventura)
+    * Mostrar libros que contengan al menos uno de esos géneros.
+
+✅ 2. Ordenar los libros
+Permitir mostrar los libros ordenados por:
+
+    * Título (A-Z)
+    * Autor (A-Z)
+    * Opción extra: ID descendente (último libro agregado al inicio)
+
+✅ 3. Editar un libro
+Permitir al usuario modificar:
+
+    * Título
+    * Autor
+    * Lista de géneros
+
+Por medio de su ID o nombre
+
+✨ Retos opcionales (nivel intermedio)
+🔄 4. Eliminar un libro
+    * Borrar un libro dado su ID
+    * Actualizar correctamente la lista y el contador
+
+📊 5. Mostrar estadísticas
+    * Cantidad de libros por género
+    * Autor con más libros registrados
+
+🗂️ 6. Agrupar por autor
+Mostrar todos los libros organizados por autor (tipo diccionario)
+
+
+Si haces todos esos seis retos, estarías tocando:
+
+    * Búsquedas complejas
+    * Ordenamiento personalizado
+    * Manipulación de listas de objetos
+    * Interacción por consola
+    * Y bases para hacer un CRUD completo (Crear, Leer, Actualizar, Eliminar)
