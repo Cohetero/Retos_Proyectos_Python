@@ -6,3 +6,5 @@ AMARILLO = "\033[93m"
 AZUL = "\033[94m"
 MAGENTA = "\033[95m"
 CYAN = "\033[96m"
+
+FORMATO_FECHA = "%d/%m/%Y"
