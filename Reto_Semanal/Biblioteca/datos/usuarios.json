@@ -1,0 +1,20 @@
+[
+    {
+        "id_user": "USER-J2DAKO",
+        "nombre": "Mauricio",
+        "apellido": "Cohetero",
+        "libros_prestados": []
+    },
+    {
+        "id_user": "USER-Z10NVE",
+        "nombre": "Emilia",
+        "apellido": "Luna",
+        "libros_prestados": []
+    },
+    {
+        "id_user": "USER-QBARAC",
+        "nombre": "Andrea",
+        "apellido": "Perez",
+        "libros_prestados": []
+    }
+]

@@ -1,0 +1,118 @@
+[
+    {
+        "id_libro": "LIB-1XJ17L",
+        "titulo": "Trono de Cristal",
+        "autor": "Sarah J. Maas",
+        "anio": 2012,
+        "generos": [
+            "Novela",
+            "Romance",
+            "Fantasia"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-ZY17FQ",
+        "titulo": "Corona de MediaNoche",
+        "autor": "Sarah J. Maas",
+        "anio": 2014,
+        "generos": [
+            "Romance",
+            "Fantasia",
+            "Novela"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-0HAPEA",
+        "titulo": "Heredera de Fuego",
+        "autor": "Sarah J. Maas",
+        "anio": 2016,
+        "generos": [
+            "Fantasia",
+            "Romance",
+            "Novela"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-7L16T8",
+        "titulo": "La Divina Comedia",
+        "autor": "Dante Alighieri",
+        "anio": 1,
+        "generos": [
+            "Empopeya"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-K8ECRS",
+        "titulo": "Una breve historia de casi todo",
+        "autor": "Bill Bryson",
+        "anio": 2010,
+        "generos": [
+            "Divulgacion cientifica",
+            "No-ficcion"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-QHRDKG",
+        "titulo": "Metro 2033",
+        "autor": "Dmitry Glukhovsky",
+        "anio": 2007,
+        "generos": [
+            "Novela",
+            "Ciencia Ficcion",
+            "Apocaliptica"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-FQIHF2",
+        "titulo": "Pok\u00e9mon Red Green Blue #1",
+        "autor": "Hidenori Kusaka",
+        "anio": 1997,
+        "generos": [
+            "Manga",
+            "Accion",
+            "Aventura",
+            "Comedia"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-Y6ALRB",
+        "titulo": "Harry Potter y la Piedra Filosofal",
+        "autor": "J. K. Rowling",
+        "anio": 1997,
+        "generos": [
+            "Novela",
+            "Fantasia",
+            "Infantil",
+            "Baja Fantasia"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-CGVC6V",
+        "titulo": "Estructuras de datos en C++",
+        "autor": "Luis Joyanes Aguilar",
+        "anio": 2007,
+        "generos": [
+            "Estudio"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-36MCCA",
+        "titulo": "Las Naves de la Magia",
+        "autor": "Robin Hobb",
+        "anio": 1998,
+        "generos": [
+            "Fantasia",
+            "Alta Fantasia"
+        ],
+        "disponible": true
+    }
+]

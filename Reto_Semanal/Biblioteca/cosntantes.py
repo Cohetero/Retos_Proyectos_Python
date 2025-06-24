@@ -8,3 +8,9 @@ MAGENTA = "\033[95m"
 CYAN = "\033[96m"
 
 FORMATO_FECHA = "%d/%m/%Y"
+RUTA_JSON_LIBROS = "datos/libros.json"
+RUTA_JSON_USUARIOS = "datos/usuarios.json"
+RUTA_JSON_PRESTAMOS = "datos/prestamos.json"
+
+CLAVE = 1234
+INTENTOS_MAXIMOS = 3
