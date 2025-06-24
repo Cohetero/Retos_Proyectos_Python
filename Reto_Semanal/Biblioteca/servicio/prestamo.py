@@ -61,7 +61,7 @@ class Prestamo:
     def cargar_historial(self):
         try:
             with open(RUTA_JSON_PRESTAMOS, "r", encoding="utf-8") as file:
-                return json.loaf(file)
+                return json.load(file)
         except FileNotFoundError:
             return {}
 
