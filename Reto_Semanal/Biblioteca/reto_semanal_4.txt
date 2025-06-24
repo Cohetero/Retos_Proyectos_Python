@@ -1,0 +1,77 @@
+📘 Reto Semanal #4: Historial avanzado de préstamos + reportes y exportación CSV
+🎯 Objetivo:
+Crear un sistema que guarde todo el historial de préstamos (incluso los devueltos), y permita generar reportes útiles + exportarlos a .csv.
+
+🧱 Estructura sugerida:
+📦 Nueva clase: HistorialPrestamos
+Encárgate de guardar y procesar los datos de préstamos completos.
+
+class HistorialPrestamos:
+    def __init__(self):
+        self.registros = []  # Lista de dicts o una clase PrestamoRegistro
+
+
+✍️ ¿Qué debe tener cada registro?
+{
+  "id_libro": "L001",
+  "id_usuario": "U002",
+  "fecha_prestamo": "2025-06-20",
+  "fecha_devolucion": "2025-06-24"  # puede ser None si no se ha devuelto
+}
+
+✅ Métodos clave que deberías implementar:
+
+    1. agregar_prestamo(id_libro, id_usuario, fecha)
+    2. agregar_devolucion(id_libro, fecha)
+    3. exportar_csv(ruta="historial.csv")
+    4. libros_mas_prestados() → dict
+    5. usuarios_mas_activos() → dict
+    6. promedio_dias_prestamo() → float
+
+💡 Tips:
+    * Usa datetime.strptime() y datetime.now() para fechas.
+    * Para exportar .csv, puedes usar el módulo csv de Python.
+    * Si quieres hacer gráficos en consola, luego te puedo enseñar con matplotlib o tabulate.
+
+🧙‍♂️ Mini Proyecto: Simulador de Combate RPG por consola
+🎯 Objetivo:
+Simular batallas RPG con personajes, estadísticas, turnos y habilidades. Todo por consola, divertido y con clases.
+
+🧱 Estructura básica
+📦 Clases recomendadas:
+    1. Personaje
+        * nombre, vida, ataque, defensa, energía, habilidades
+        * atacar(objetivo), recibir_danio(cantidad), esta_vivo()
+
+    2. Habilidad
+        * nombre, daño base, coste de energía, efecto especial (opcional)
+
+    3. Combate
+        * lista de personajes (jugador vs enemigo)
+        * turnos automáticos o por input
+        * mostrar log del combate
+
+✅ Fases sugeridas:
+🌀 Fase 1: Batalla básica
+    * Dos personajes: tú vs enemigo
+    * Ataques simples (quitan vida)
+    * Gana el que sobrevive
+
+🔥 Fase 2: Habilidades
+    * Agrega habilidades especiales que gasten energía
+    * Ej: “Fuego” quita más vida, “Curar” recupera puntos
+
+💾 Fase 3 (opcional): Guardar partida
+    * Guardar personajes y estado en .json
+
+
+💡 Ejemplo de combate:
+Tu turno:
+1. Atacar
+2. Usar habilidad
+3. Defender
+
+> 2
+Elegiste usar "Llama Sagrada" → 25 de daño a Enemigo
+
+Turno enemigo: Ataca → Te quita 12 de vida

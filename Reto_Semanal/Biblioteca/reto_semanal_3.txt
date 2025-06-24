@@ -1,0 +1,101 @@
+🐍 Reto Semanal #3 - Sistema de Gestión de Biblioteca 📚
+
+🎯 Objetivo:
+Crear un programa que permita registrar libros, prestar libros a usuarios y llevar un control de préstamos activos.
+
+✅ Requisitos mínimos:
+
+1. Módulos:
+    * main.py: Menú e interacción con el usuario.
+    * libro.py: Clase Libro.
+    * usuario.py: Clase Usuario.
+    * prestamo.py: Clase Prestamo.
+
+2. Cada Libro debe tener:
+    * Título
+    * Autor
+    * Año
+    * Géneros (puede tener más de uno)
+
+3. Cada Usuario debe tener:
+    * Nombre
+    * ID único
+    * Lista de libros prestados
+
+4. Cada Préstamo debe tener:
+    * Usuario
+    * Libro
+    * Fecha de préstamo
+    * Fecha de devolución esperada (ej. 7 días después)
+
+5. Funcionalidades mínimas:
+    * 📗 Agregar libros
+    * 👤 Registrar usuarios
+    * 🔄 Prestar libros
+    * 🔍 Ver libros disponibles
+    * 🗓️ Mostrar todos los préstamos activos
+
+⭐ Extras (si te animas):
+
+Extra	                                                                                    Descripción
+🛑 Validar que no se preste un libro ya prestado	                                        Evitar duplicados
+📁 Guardar libros, usuarios y préstamos en archivos JSON	                                Persistencia de datos
+🕓 Mostrar si un préstamo está vencido	                                                    Comparando fechas
+📦 Almacenar por separado en archivos libros.json, usuarios.json y prestamos.json	        Organización
+
+💎 Extras adicionales para el sistema de biblioteca
+
+📚 1. Búsqueda de libros por título, autor o género
+    Agrega una opción que permita al usuario escribir un término y buscar:
+
+    Ejemplo:
+    🔍 Buscar libro
+        > "Harry Potter"
+        - Harry Potter y la Piedra Filosofal, J.K. Rowling (Fantasía)
+
+🔄 2. Devolver libros
+    Crea una función para que los usuarios puedan devolver los libros prestados. Puedes validar si realmente lo tienen en préstamo antes de permitirlo.
+
+🔔 3. Mostrar libros prestados por usuario
+    Permite ver qué libros tiene prestados un usuario:
+
+    Ejemplo:
+        👤 Usuario: Sofía (ID: 0001)
+        📗 - El Principito (devuelve el: 2025-06-24)
+
+🕰️ 4. Marcar préstamos vencidos
+    Revisa si la fecha actual es mayor que la fecha de devolución esperada y márcalos con un ⚠️ o en rojo si usas colores ANSI.
+
+🔢 5. Límite de préstamos por usuario
+    Por ejemplo, que un usuario solo pueda tener máximo 3 libros a la vez. Esto simula una biblioteca real y te obliga a validar más condiciones.   
+
+🧮 6. Estadísticas rápidas
+    Agrega un menú especial para mostrar:
+
+        * Total de libros registrados 📚
+        * Total de usuarios 👥
+        * Libros prestados actualmente 📤
+        * Libros disponibles 📥
+
+🔐 7. Autenticación de administrador (mini reto de seguridad)
+    Puedes agregar una validación simple al inicio:
+
+    Ejemplo:
+        Ingrese la contraseña de administrador: ****
+
+    Si es correcta, entra al sistema. Si no, sale. Incluso puedes guardarla hasheada con hashlib.
+
+🎀 Bonus visual (si te animas)
+    * Usa colores con tus constantes ANSI para separar secciones o alertas
+    * Divide las salidas con líneas, emojis o secciones centradas.
+
+🧸 Ejemplo de uso:
+
+Bienvenido al sistema de biblioteca 📚
+
+1. Registrar libro
+2. Registrar usuario
+3. Prestar libro
+4. Ver libros disponibles
+5. Ver préstamos activos
+6. Salir
