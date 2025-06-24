@@ -9,7 +9,7 @@
             "Romance",
             "Fantasia"
         ],
-        "disponible": true
+        "disponible": false
     },
     {
         "id_libro": "LIB-ZY17FQ",
@@ -33,7 +33,7 @@
             "Romance",
             "Novela"
         ],
-        "disponible": true
+        "disponible": false
     },
     {
         "id_libro": "LIB-7L16T8",
@@ -79,7 +79,7 @@
             "Aventura",
             "Comedia"
         ],
-        "disponible": true
+        "disponible": false
     },
     {
         "id_libro": "LIB-Y6ALRB",
@@ -102,7 +102,7 @@
         "generos": [
             "Estudio"
         ],
-        "disponible": true
+        "disponible": false
     },
     {
         "id_libro": "LIB-36MCCA",
@@ -112,6 +112,20 @@
         "generos": [
             "Fantasia",
             "Alta Fantasia"
+        ],
+        "disponible": true
+    },
+    {
+        "id_libro": "LIB-FM7K7Y",
+        "titulo": "Naruto Tomo 1",
+        "autor": "Masashi Kishimoto",
+        "anio": 2000,
+        "generos": [
+            "Accion",
+            "Artes Marciales",
+            "Aventura",
+            "Comedia",
+            "Fantasia"
         ],
         "disponible": true
     }

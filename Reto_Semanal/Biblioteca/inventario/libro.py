@@ -1,4 +1,4 @@
-from cosntantes import VERDE, AMARILLO,RESET
+from constantes import VERDE, AMARILLO,RESET
 import random
 import string
 

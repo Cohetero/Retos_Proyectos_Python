@@ -1,12 +1,12 @@
-from cosntantes import AZUL, AMARILLO, RESET
+from constantes import AZUL, AMARILLO, RESET
 import random
 import string
 
 class Usuario:
-    def __init__(self, nombre: str, apellido: str, libros_prestados: list = [], id_user: str = None):
+    def __init__(self, nombre: str, apellido: str, libros_prestados: list = None, id_user: str = None):
         self._nombre = nombre
         self._apellido = apellido
-        self._libros_prestados = libros_prestados
+        self._libros_prestados = libros_prestados if libros_prestados else []
         if id_user:
             self._id_user = id_user
         else:
@@ -62,4 +62,4 @@ class Usuario:
         return f"""{AMARILLO}{self._id_user}{RESET}
         {AZUL}Nombre: {RESET}{self._nombre}
         {AZUL}Apellid: {RESET}{self._apellido}
-        {AZUL}Libros Prestados: {RESET}{', '.join(l.titulo for l in self._libros_prestados)}"""
+        {AZUL}Libros Prestados: {RESET}{', '.join(id for id in self._libros_prestados)}"""

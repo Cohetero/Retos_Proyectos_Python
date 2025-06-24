@@ -3,18 +3,31 @@
         "id_user": "USER-J2DAKO",
         "nombre": "Mauricio",
         "apellido": "Cohetero",
-        "libros_prestados": []
+        "libros_prestados": [
+            "LIB-1XJ17L",
+            "LIB-0HAPEA"
+        ]
     },
     {
         "id_user": "USER-Z10NVE",
         "nombre": "Emilia",
         "apellido": "Luna",
-        "libros_prestados": []
+        "libros_prestados": [
+            "LIB-CGVC6V"
+        ]
     },
     {
         "id_user": "USER-QBARAC",
         "nombre": "Andrea",
         "apellido": "Perez",
+        "libros_prestados": [
+            "LIB-FQIHF2"
+        ]
+    },
+    {
+        "id_user": "USER-GXY2JW",
+        "nombre": "Rosario",
+        "apellido": "Santiago",
         "libros_prestados": []
     }
 ]
