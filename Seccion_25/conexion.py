@@ -19,7 +19,7 @@ class Conexion:
                     f"port={os.getenv('DB_PORT', '5432')} "
                     f"dbname={os.getenv('DB_NAME', 'Test_db')} "
                     f"user={os.getenv('DB_USER', 'postgres')} "
-                    f"password={os.getenv('DB_PASSWORD', 'a65B3-19e7A4')} "
+                    f"password={os.getenv('DB_PASSWORD', '1234')} "
                 )
                 cls._pool = ConnectionPool(
                     conninfo = config,
