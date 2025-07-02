@@ -1,0 +1,65 @@
+
+Reto Semanal #5: Sistema de gestión de películas con interfaz de búsqueda
+
+Objetivo:
+Crear un sistema que permita registrar, consultar y buscar películas, almacenadas en un archivo .json. Debes permitir filtrado por distintos campos (género, director, año, etc.) y aplicar buenas prácticas de modularidad y clases.
+
+Estructura de archivos esperada:
+proyecto_peliculas/
+├── main.py
+├── catalogo/
+│   ├── pelicula.py         # Clase Película
+│   ├── gestor.py           # Clase o funciones para gestionar el catálogo
+├── datos/
+│   └── peliculas.json      # Base de datos de películas
+├── utilidades/
+│   └── utilidades.py       # Funciones de ayuda (validación, formateo, etc.)
+
+Funcionalidades mínimas:
+
+Gestión de películas:
+- Agregar una nueva película (con título, director, género, año, duración, calificación)
+- Mostrar todas las películas registradas
+
+Búsqueda:
+- Buscar películas por:
+  - Título
+  - Director
+  - Género
+  - Año
+
+Almacenamiento:
+- Guardar y cargar los datos en un archivo .json
+
+Extra (opcional):
+- Ordenar resultados por año o calificación
+- Permitir exportar resultados a .csv
+- Validaciones de entrada amigables
+
+Ejemplo de prueba:
+[
+  {
+    "titulo": "Inception",
+    "director": "Christopher Nolan",
+    "genero": "Ciencia Ficción",
+    "anio": 2010,
+    "duracion": 148,
+    "calificacion": 8.8
+  },
+  {
+    "titulo": "Parasite",
+    "director": "Bong Joon-ho",
+    "genero": "Drama",
+    "anio": 2019,
+    "duracion": 132,
+    "calificacion": 8.6
+  }
+]
+
+Criterios de evaluación:
+- Uso de clases: 10 pts
+- Módulos separados: 10 pts
+- Manejo de archivos JSON: 10 pts
+- Búsqueda funcional: 5 pts
+- Extra (ordenamiento/exportación): 5 pts
+Total: 40 pts
