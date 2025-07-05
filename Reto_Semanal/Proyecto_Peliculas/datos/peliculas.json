@@ -1,0 +1,26 @@
+[
+    {
+        "titulo": "Inception",
+        "director": "Christopher Nolan",
+        "genero": "Ciencia Ficci\u00f3n",
+        "anio": 2010,
+        "duracion": 148,
+        "calificacion": 8.8
+    },
+    {
+        "titulo": "Parasite",
+        "director": "Bong Joon-ho",
+        "genero": "Drama",
+        "anio": 2019,
+        "duracion": 132,
+        "calificacion": 8.6
+    },
+    {
+        "titulo": "Interestelar",
+        "director": "Christopher Nolan",
+        "genero": "Viajes Espaciales",
+        "anio": "2014",
+        "duracion": "169",
+        "calificacion": "8.7"
+    }
+]
