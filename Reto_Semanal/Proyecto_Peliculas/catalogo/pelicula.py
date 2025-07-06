@@ -5,9 +5,9 @@ class Pelicula:
         self._titulo = titulo
         self._director = director
         self._genero = genero
-        self._anio = anio
-        self._duracion = duracion
-        self._calificacion = calificacion
+        self._anio = int(anio)
+        self._duracion = int(duracion)
+        self._calificacion = float(calificacion)
 
     @property
     def titulo(self) -> str:

@@ -8,6 +8,22 @@
         "calificacion": 8.8
     },
     {
+        "titulo": "Guerra Mundial Z",
+        "director": "Marc Forster",
+        "genero": "Terror de zombis",
+        "anio": 2013,
+        "duracion": 114,
+        "calificacion": 7.0
+    },
+    {
+        "titulo": "Interestelar",
+        "director": "Christopher Nolan",
+        "genero": "Viajes Espaciales",
+        "anio": 2014,
+        "duracion": 169,
+        "calificacion": 8.7
+    },
+    {
         "titulo": "Parasite",
         "director": "Bong Joon-ho",
         "genero": "Drama",
@@ -16,11 +32,19 @@
         "calificacion": 8.6
     },
     {
-        "titulo": "Interestelar",
-        "director": "Christopher Nolan",
-        "genero": "Viajes Espaciales",
-        "anio": "2014",
-        "duracion": "169",
-        "calificacion": "8.7"
+        "titulo": "Pokemon Newtow Contraataca Evolucion",
+        "director": "Kunihiko Yuyuma, Tetsuo Yajima, Motonori Sakakibara",
+        "genero": "Anime basado en videojuegos",
+        "anio": 2019,
+        "duracion": 98,
+        "calificacion": 8.2
+    },
+    {
+        "titulo": "HOGAR a la Deriva",
+        "director": "Hiroyasu Ishida",
+        "genero": "Animes de sci-fi y fantasia",
+        "anio": 2022,
+        "duracion": 120,
+        "calificacion": 5.7
     }
 ]
