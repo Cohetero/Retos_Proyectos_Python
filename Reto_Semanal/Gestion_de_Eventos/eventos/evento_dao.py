@@ -4,6 +4,7 @@ from .evento import Evento
 
 class EventoDAO:
     _SELECT = "SELECT * FROM eventos ORDER BY id_evento"
+    _SELECT_SEARCH_ID_EVENT = "SELECT * FROM eventos WHERE id_evento = %s"
     _INSERTAR = (
         "INSERT INTO eventos (tipo, nombre, fecha, ubicacion, extra1, extra2, extra3) "
         "VALUES (%s, %s, %s, %s, %s, %s, %s)"
@@ -15,9 +16,42 @@ class EventoDAO:
     _ELIMINAR = "DELETE FROM eventos WHERE id_evento = %s"
 
     @classmethod
-    def seleccionar(cls):
+    def seleccionar_todo(cls):
         with CursorDelPool() as cursor:
-            log.debug("Seleccionando usuarios")
             cursor.execute(cls._SELECT)
             resultados = cursor.fetchall()
+            log.debug("Seleccionando eventoss")
             return [Evento(*fila) for fila in resultados]
+
+    @classmethod
+    def seleccionar_buscar_por_id(cls, id_evento: int):
+        with CursorDelPool() as cursor:
+            valores = (id_evento,)
+            cursor.execute(cls._SELECT_SEARCH_ID_EVENT, valores)
+            resultado = cursor.fetchone()
+            log.debug("Buscando eventos por id_evento")
+            return Evento(*resultado) if resultado else None
+
+    @classmethod
+    def insertar(cls, evento: Evento):
+        with CursorDelPool() as cursor:
+            valores = (evento.tipo, evento.nombre, evento.fecha, evento.ubicacion, evento.extra1, evento.extra2, evento.extra3)
+            cursor.execute(cls._INSERTAR, valores)
+            log.debug(f"Evento Insertado: {evento}")
+            return cursor.rowcount
+
+    @classmethod
+    def actualizar(cls, evento: Evento):
+        with CursorDelPool() as cursor:
+            valores = (evento.tipo, evento.nombre, evento.fecha, evento.ubicacion, evento.extra1, evento.extra2, evento.extra3, evento.id_evento)
+            cursor.execute(cls._ACTUALIZAR, valores)
+            log.debug(f"Evento Actualizado: {evento}")
+            return cursor.rowcount
+
+    @classmethod
+    def eliminar(cls, evento: Evento):
+        with CursorDelPool() as cursor:
+            valores = (evento.id_evento,)
+            cursor.execute(cls._ELIMINAR, valores)
+            log.debug(f"Evento Eliminado: {evento}")
+            return cursor.rowcount

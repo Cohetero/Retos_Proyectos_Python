@@ -34,6 +34,10 @@ class Evento:
     @property
     def id_evento(self) -> int:
         return self._id_evento
+    
+    @id_evento.setter
+    def id_evento(self, id_evento: int):
+        self._id_evento = id_evento
 
     @property
     def tipo(self) -> str:
