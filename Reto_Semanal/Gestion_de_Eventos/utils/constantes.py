@@ -7,4 +7,5 @@ AZUL = "\033[94m"
 MAGENTA = "\033[95m"
 CYAN = "\033[96m"
 
-FORMATO_FECHA = "%Y-%m-%d %H:%M"
+FORMATO_FECHA_DIA = "%Y-%m-%d"
+FORMATO_FECHA_HORA = "%Y-%m-%d %H:%M"

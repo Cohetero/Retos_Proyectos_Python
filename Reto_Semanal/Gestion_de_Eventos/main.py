@@ -17,7 +17,7 @@ def menu():
 def crear_objeto_evento() -> Evento:
     tipo = validar_texto("Tipo del Evento")
     nombre = validar_texto("Nombre del Evento")
-    fecha = validar_fecha()
+    fecha = validar_fecha(FORMATO_FECHA_HORA)
     ubicacion = validar_texto("Ubicacion del Evento")
     extra1 = input(f"{MAGENTA}Extra 1 (ENTER para saltarlo){RESET}: ").strip()
     extra2 = input(f"{MAGENTA}Extra 2 (ENTER para saltarlo){RESET}: ").strip()
@@ -35,11 +35,17 @@ def crear_objeto_evento() -> Evento:
     return evento
 
 def buscar_por_id_evento(eventos: list, id_evento: int) -> Evento:
-    for evento in eventos:
-        if id_evento == evento.id_evento:
-            return evento
+    if eventos:
+        for eve in eventos:
+            if id_evento == eve.id_evento:
+                evento = eve
+                break
+        else:
+            evento = None
     else:
-        return None
+        evento = EventoDAO.seleccionar_buscar_por_id(id_evento)
+    
+    return evento
 
 def main():
     opcion = None
@@ -59,20 +65,23 @@ def main():
 
             case 2:
                 print(f"{CYAN}\nListar todos los eventos!!!\n{RESET}")
-                eventos = EventoDAO.seleccionar_todo()
+                busqueda = validar_si_no("Desea ordernar por fecha? ")
+                eventos = EventoDAO.seleccionar_todo(busqueda)
                 log.info(f"Numero de registros obtenidos con el select: {len(eventos)}")
                 for evento in eventos:
-                    print(evento)
+                    evento.descripcion_detallada()
 
             case 3:
                 print(f"{CYAN}\nBuscar por fecha!!!\n{RESET}")
+                fecha = validar_fecha(FORMATO_FECHA_DIA)
+                eventos = EventoDAO.seleccionar_buscar_por_fecha(fecha)
+                log.info(f"Numero de registros obtenidos con el select: {len(eventos)}")
+                for evento in eventos:
+                    print(evento)
             case 4:
                 print(f"{CYAN}\nEditar evento existente!!!\n{RESET}")
                 id_evento = validar_entero("ID del evento a actualizar")
-                if eventos:
-                    evento = buscar_por_id_evento(eventos, id_evento)
-                else:
-                    evento = EventoDAO.seleccionar_buscar_por_id(id_evento)
+                evento = buscar_por_id_evento(eventos, id_evento)
 
                 if evento:
                     evento_actualizado = crear_objeto_evento()
@@ -85,15 +94,12 @@ def main():
             case 5:
                 print(f"{CYAN}\nEliminar evento!!!\n{RESET}")
                 id_evento = validar_entero("ID del evento a eliminar")
-                if eventos:
-                    evento = buscar_por_id_evento(eventos, id_evento)
-                else:
-                    evento = EventoDAO.seleccionar_buscar_por_id(id_evento)
+                evento = buscar_por_id_evento(eventos, id_evento)
 
                 if evento:
                     print(evento)
-                    eliminacion = input("Seguro que que quiere eliminar el evento? (Si/No)").strip().lower()
-                    if eliminacion == "si":
+                    eliminacion = validar_si_no("Seguro que que quiere eliminar el evento?")
+                    if eliminacion:
                         evcento_eliminado = EventoDAO.eliminar(evento)
                         print(f"Evento elimiando: {evcento_eliminado}")
                         log.info(f"Evento elimiando: {evcento_eliminado}")

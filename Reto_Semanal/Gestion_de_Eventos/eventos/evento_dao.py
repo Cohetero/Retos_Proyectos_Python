@@ -5,6 +5,7 @@ from .evento import Evento
 class EventoDAO:
     _SELECT = "SELECT * FROM eventos ORDER BY id_evento"
     _SELECT_SEARCH_ID_EVENT = "SELECT * FROM eventos WHERE id_evento = %s"
+    _SELECT_SEARCH_DATE = "SELECT * FROM eventos WHERE fecha::date = %s"
     _INSERTAR = (
         "INSERT INTO eventos (tipo, nombre, fecha, ubicacion, extra1, extra2, extra3) "
         "VALUES (%s, %s, %s, %s, %s, %s, %s)"
@@ -16,9 +17,13 @@ class EventoDAO:
     _ELIMINAR = "DELETE FROM eventos WHERE id_evento = %s"
 
     @classmethod
-    def seleccionar_todo(cls):
+    def seleccionar_todo(cls, ordernar_fecha: bool):
         with CursorDelPool() as cursor:
-            cursor.execute(cls._SELECT)
+            if ordernar_fecha:
+                select = cls._SELECT.replace("id_evento", "fecha")
+            else:
+                select = cls._SELECT
+            cursor.execute(select)
             resultados = cursor.fetchall()
             log.debug("Seleccionando eventoss")
             return [Evento(*fila) for fila in resultados]
@@ -31,6 +36,15 @@ class EventoDAO:
             resultado = cursor.fetchone()
             log.debug("Buscando eventos por id_evento")
             return Evento(*resultado) if resultado else None
+
+    @classmethod
+    def seleccionar_buscar_por_fecha(cls, fecha):
+        with CursorDelPool() as cursor:
+            valores = (fecha,)
+            cursor.execute(cls._SELECT_SEARCH_DATE, valores)
+            resultados = cursor.fetchall()
+            log.debug("Buscando eventos por fecha")
+            return [Evento(*fila) for fila in resultados]
 
     @classmethod
     def insertar(cls, evento: Evento):

@@ -19,7 +19,7 @@ reto6_eventos/
 └── README.md              # (opcional)
 
 💾 Base de datos (SQLite):
-- Tabla: eventos
+- Tabla: eventos ✅
 - Campos:
   - id INTEGER PRIMARY KEY AUTOINCREMENT
   - tipo TEXT (concierto, exposición, taller)
@@ -31,15 +31,15 @@ reto6_eventos/
   - extra3 TEXT (solo si aplica, como en Taller)
 
 🛠️ Funcionalidades CRUD:
-1. Crear evento (con validación)
-2. Listar eventos (todos o filtrados)
-3. Buscar por fecha
-4. Editar evento por ID
-5. Eliminar evento por ID
+1. Crear evento (con validación) ✅
+2. Listar eventos (todos o filtrados) ✅
+3. Buscar por fecha ✅
+4. Editar evento por ID ✅
+5. Eliminar evento por ID ✅
 
 🧬 Clases:
 Clase abstracta Evento:
-- Atributos: nombre, fecha, ubicacion
+- Atributos: nombre, fecha, ubicacion 
 - Método abstracto: descripcion_detallada()
 
 Subclases:
@@ -49,18 +49,18 @@ Subclases:
 
 🔐 Validaciones y errores personalizados:
 validador.py:
-- validar_fecha() → no aceptar fechas pasadas
-- validar_texto() → sin campos vacíos
+- validar_fecha() → no aceptar fechas pasadas✅
+- validar_texto() → sin campos vacíos ✅
 
 errores.py:
-- FechaInvalidaError
-- CampoVacioError
+- FechaInvalidaError ✅
+- CampoVacioError ✅
 
 🌟 Extras (opcional):
-- Ordenar eventos por fecha
+- Ordenar eventos por fecha ✅
 - Exportar resultados a CSV
-- Confirmación antes de eliminar
-- Colores en consola (con colorama)
+- Confirmación antes de eliminar ✅
+- Colores en consola (con colorama) ✅
 - Interfaz mejorada (con rich)
 
 💡 Ejemplo de menú:

@@ -31,11 +31,11 @@ def validar_texto(msg: str) -> str:
         except CampoVacioError as e:
             print(f"{ROJO}{e}{RESET}")
 
-def validar_fecha() -> datetime:
+def validar_fecha(formato: str) -> datetime:
     while True:
         try:
-            fecha = input(f"{MAGENTA}Fecha{RESET} {AMARILLO}(YYYY-MM-DD HH:MM): {RESET}").strip()
-            fecha_conversion = datetime.strptime(fecha, FORMATO_FECHA)
+            fecha = input(f"{MAGENTA}Fecha{RESET} {AMARILLO}({formato}): {RESET}").strip()
+            fecha_conversion = datetime.strptime(fecha, formato)
             try:
                 if datetime.now() < fecha_conversion:
                     return fecha_conversion
@@ -45,3 +45,11 @@ def validar_fecha() -> datetime:
                 print(f"{ROJO}{e}{RESET}")
         except ValueError:
             print(f"{ROJO}ERROR: Formato de cadena invalido{RESET}")
+
+def validar_si_no(msg: str) -> bool:
+    while True:
+        busqueda = input(f"{MAGENTA}{msg}{RESET} (Si/No): ").strip().lower()
+        if busqueda in ("si", "no"):
+            return True if busqueda == "si" else False
+        else:
+            print(f"{AMARILLO}Solo se aceptan respuesta si o no...{RESET}")

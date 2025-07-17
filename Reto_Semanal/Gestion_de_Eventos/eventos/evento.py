@@ -1,7 +1,8 @@
-from utils.constantes import VERDE, CYAN, RESET
+from utils.constantes import VERDE, AMARILLO, CYAN, RESET
 from datetime import datetime
+from abc import ABC, abstractmethod
 
-class Evento:
+class Evento(ABC):
     def __init__(
             self,
             id_evento: int = None,
@@ -20,6 +21,10 @@ class Evento:
         self._extra1 = extra1
         self._extra2 = extra2
         self._extra3 = extra3
+
+    @abstractmethod
+    def descripcion_detallada(self):
+        pass
 
     def __str__(self) -> str:
         return f"""{VERDE}{self._id_evento}:{RESET}
