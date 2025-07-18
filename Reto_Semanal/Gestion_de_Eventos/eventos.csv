@@ -1,0 +1,11 @@
+id_evento,tipo,nombre,fecha,ubicacion,extra1,extra2,extra3
+1,Exposición,Tech Summit 2025,2025-09-12 09:00:00-06:00,CDMX,Entrada libre,Idioma: inglés,
+2,Concierto,Rock & Arts,2025-08-20 18:00:00-06:00,Guadalajara,Zona VIP,,
+3,Taller,Python para principiantes,2025-07-25 10:00:00-06:00,Online,,,
+4,Exposición,IA en la educación,2025-10-01 15:00:00-06:00,Monterrey,Con certificado,Duración: 2h,
+5,Concierto,Indie Fest,2025-09-05 20:30:00-06:00,Querétaro,Boletos en taquilla,,
+6,Exposición,Feria del libro universitario,2025-08-15 11:00:00-06:00,Puebla,,Organizado por la UNAM,
+7,Exposición,Arte digital y cultura pop,2025-07-30 12:00:00-06:00,CDMX,,,
+8,Exposición,Mujeres en tecnología,2025-10-10 09:30:00-06:00,Toluca,Acceso limitado,Requiere registro previo,
+9,Taller,Diseño UX/UI,2025-08-03 14:00:00-06:00,Online,Incluye materiales,Incluye materiales,
+10,Exposición,Ciberseguridad para todos,2025-07-20 16:00:00-06:00,Online,,,

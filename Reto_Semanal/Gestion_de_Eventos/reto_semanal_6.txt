@@ -39,13 +39,13 @@ reto6_eventos/
 
 🧬 Clases:
 Clase abstracta Evento:
-- Atributos: nombre, fecha, ubicacion 
-- Método abstracto: descripcion_detallada()
+- Atributos: nombre, fecha, ubicacion ✅
+- Método abstracto: descripcion_detallada() ✅
 
 Subclases:
-- Concierto: banda, genero
-- Exposicion: artista, tipo_arte
-- Taller: ponente, duracion_horas, requisitos
+- Concierto: banda, genero ✅
+- Exposicion: artista, tipo_arte ✅
+- Taller: ponente, duracion_horas, requisitos ✅
 
 🔐 Validaciones y errores personalizados:
 validador.py:

@@ -9,3 +9,5 @@ CYAN = "\033[96m"
 
 FORMATO_FECHA_DIA = "%Y-%m-%d"
 FORMATO_FECHA_HORA = "%Y-%m-%d %H:%M"
+
+RUTA_EVENTOS_CSV = "eventos.csv"
