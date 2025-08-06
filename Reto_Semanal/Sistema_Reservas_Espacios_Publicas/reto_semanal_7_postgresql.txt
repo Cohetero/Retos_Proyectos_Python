@@ -1,0 +1,83 @@
+Reto Semanal #7 – Sistema de Reservas de Espacios Públicos (con PostgreSQL)
+
+🎯 Objetivo:
+Crear un sistema en consola para gestionar reservas de espacios públicos (como salones, auditorios, canchas o salas de estudio), utilizando una base de datos PostgreSQL, programación orientada a objetos y relaciones entre tablas.
+
+📁 Estructura sugerida del proyecto:
+reto7_reservas/
+├── main.py
+├── espacios/
+│   ├── espacio.py            # Clase base
+│   ├── salon.py              # Subclase
+│   ├── cancha.py             # Subclase
+│   └── auditorio.py
+├── reservas/
+│   ├── reserva.py            # Clase para una reserva
+│   └── reserva_dao.py        # Lógica de CRUD
+├── db/
+│   └── conexion.py           # Conexión con PostgreSQL (psycopg2)
+├── utils/
+│   ├── validador.py
+│   ├── errores.py
+│   └── logger.py
+└── README.md
+
+🛠️ Funcionalidades clave:
+
+📌 Espacios:
+- Registrar nuevos espacios (nombre, tipo, capacidad, ubicación)
+- Listar espacios disponibles
+
+📌 Reservas:
+- Crear reserva (seleccionar espacio, fecha, horario, responsable)
+- Validar que no se crucen horarios para el mismo espacio
+- Buscar reservas por fecha o por espacio
+- Editar o cancelar una reserva
+
+💾 Base de datos (PostgreSQL):
+Tablas:
+1. espacios
+   - id SERIAL PRIMARY KEY
+   - tipo TEXT
+   - nombre TEXT
+   - capacidad INTEGER
+   - ubicacion TEXT
+
+2. reservas
+   - id SERIAL PRIMARY KEY
+   - espacio_id INTEGER REFERENCES espacios(id) ON DELETE CASCADE
+   - fecha DATE
+   - hora_inicio TIME
+   - hora_fin TIME
+   - responsable TEXT
+
+🔒 Validaciones:
+- No permitir fechas pasadas
+- No permitir reservas con choques de horarios en un mismo espacio
+- No permitir campos vacíos
+- Validar que hora_inicio < hora_fin
+
+🌟 Extras opcionales:
+- Exportar reservas por día o semana a CSV
+- Mostrar calendario simple en consola
+- Colores con colorama o rich
+- Tipos de espacios con atributos especiales (ej. auditorio con sonido, cancha con tipo de deporte)
+
+🧬 Clases:
+Clase abstracta Espacio:
+- Atributos: nombre, capacidad, ubicacion
+- Método abstracto: descripcion_detallada()
+
+Subclases: Salón, Cancha, Auditorio
+
+Clase Reserva:
+- Atributos: id, espacio_id, fecha, hora_inicio, hora_fin, responsable
+- Método: resumen()
+
+Nivel técnico:
+- Programación orientada a objetos
+- PostgreSQL relacional con claves foráneas
+- Validaciones de fechas y horarios
+- Lógica de negocio aplicada
+
+¡Suerte, programador! 💻🔥
