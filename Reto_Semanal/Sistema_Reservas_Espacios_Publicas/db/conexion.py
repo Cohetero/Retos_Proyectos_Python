@@ -1,5 +1,5 @@
 from psycopg_pool import ConnectionPool
-from utils.logger_base import log
+from utils.logger import log
 import atexit
 import sys
 import os

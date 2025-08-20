@@ -1,4 +1,4 @@
-from utils.logger_base import log
+from utils.logger import log
 from .conexion import Conexion
 import time
 
