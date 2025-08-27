@@ -6,6 +6,7 @@ from .salon import Salon
 
 class EspacioDAO:
     _SELECT = "SELECT * FROM espacios ORDER BY id;"
+    _SELECT_SEARCH_ID_EVENT = "SELECT * FROM espacios WHERE id = %s"
     _INSERTAR = (
         "INSERT INTO espacios (tipo, nombre, capacidad, ubicacion)"
         "VALUES (%s, %s, %s, %s);"
@@ -23,6 +24,15 @@ class EspacioDAO:
             resultados = cursor.fetchall()
             log.debug("Seleccionando la tabla de espacios")
             return (cls._distribuir_espacios_por_tipo(fila) for fila in resultados)
+
+    @classmethod
+    def seleccionar_buscar_por_id(cls, id_evento: int):
+        with CursorDelPool() as cursor:
+            valores = (id_evento,)
+            cursor.execute(cls._SELECT_SEARCH_ID_EVENT, valores)
+            resultado = cursor.fetchone()
+            log.debug("Buscando eventos por id_evento")
+            return cls._construir_evento_desde_fila(resultado) if resultado else None
 
     @classmethod
     def insertar(cls, espacio: dict):
