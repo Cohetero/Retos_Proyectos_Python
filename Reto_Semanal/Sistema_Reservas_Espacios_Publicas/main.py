@@ -16,6 +16,8 @@ def menu_principal():
     return validar_entero("> ", 0, 2, True)
 
 def menu_Espacios():
+    pausar()
+    limpiar_pantalla()
     print(f"{CYAN}{' Sistema de Gestion de Espacios ':=^80}{RESET}")
     print(f"""{AMARILLO}MENU{RESET}
     {CYAN}1. Crear nuevo Espacio.
@@ -23,8 +25,8 @@ def menu_Espacios():
     3. Listar Espacios Disponibles.
     4. Actualizar Espacios.
     5. Eliminar Espacios.
-    0. Salir.{RESET}""")
-    return validar_entero("> ", 0, 5, True)
+    6. Salir.{RESET}""")
+    return validar_entero("> ", 1, 6, True)
 
 def crear_diccionario_espacio():
     tipo = validar_entero("Tipo del Espacio:\n\t1. Auditorio\n\t2. Cancha\n\t3. Salon\n", 1, 3, True)
@@ -61,12 +63,19 @@ def Listar_todos_Espacios(espacios: list):
     for espacio in espacios:
         print(espacio.descripcion_detallada())
 
+def listar_espacios_disponibles():
+    print(f"{CYAN}\nListar todos los espacios Disponibles!!!\n{RESET}")
+    resultados = EspacioDAO.seleccionar_espacios_disponibles()
+    for espacio in resultados:
+        print(espacio.descripcion_detallada())
+
 def actualizar_Espacios(espacios: list):
     print(f"{CYAN}\nEditar espacio existente!!!\n{RESET}")
     id_espacio = validar_entero("ID del espacio a actualizar", 0, 0, False)
     espacio = buscar_por_id_espacio(espacios, id_espacio)
 
     if espacio:
+        print(espacio.descripcion_detallada())
         espacio_actualizado = crear_diccionario_espacio()
         espacio_actualizado["id_espacio"] = id_espacio
         espacio_actualizado = EspacioDAO.actualizar(espacio_actualizado)
@@ -104,6 +113,8 @@ def buscar_por_id_espacio(espacios: list, id_espacio: int):
     return espacio
 
 def menu_Reservas():
+    pausar()
+    limpiar_pantalla()
     print(f"{CYAN}{' Sistema de Reserva de Espacios ':=^80}{RESET}")
     print(f"""{AMARILLO}MENU{RESET}
     {CYAN}1. Crear nueva Reserva.
@@ -111,8 +122,8 @@ def menu_Reservas():
     3. Buscar Reservas.
     4. Editar Reservas.
     5. Cancelar Reservas.
-    0. Salir.{RESET}""")
-    return validar_entero("> ", 0, 5, True)
+    6. Salir.{RESET}""")
+    return validar_entero("> ", 1, 6, True)
 
 def main():
     opcion = True
@@ -121,18 +132,17 @@ def main():
     while opcion != 0:
         opcion = menu_principal()
         if opcion == 1:
-            while opcion != 0:
+            while opcion != 6:
                 opcion = menu_Espacios()
                 match opcion:
                     case 1: crear_Espacios()
                     case 2: Listar_todos_Espacios(espacios)
-                    case 3:
-                        pass
+                    case 3: listar_espacios_disponibles()
                     case 4: actualizar_Espacios(espacios)
                     case 5: eliminar_Espacios(espacios)
-                    case 0: print(f"{CYAN}\nRegresando al menu principal\n{RESET}")
+                    case 6: print(f"{CYAN}\nRegresando al menu principal\n{RESET}")
         elif opcion == 2:
-            while opcion != 0:
+            while opcion != 6:
                 opcion = menu_Reservas()
                 match opcion:
                     case 1:
@@ -145,11 +155,10 @@ def main():
                         pass
                     case 5:
                         pass
-                    case 0:
+                    case 6:
                         print(f"{CYAN}\nRegresando al menu principal\n{RESET}")
         else:
             print(f"{CYAN}\nGracias por usar el sistema. Hasta Luego!!!\n{RESET}")
-        pausar()
 
 
 

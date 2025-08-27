@@ -6,4 +6,4 @@ class Cancha(Espacio):
         super().__init__(id_espacio, nombre, capacidad, ubicacion)
 
     def descripcion_detallada(self) -> str:
-        return f"{CYAN}[Cancha] - {RESET}{VERDE} {self._nombre} con capacidad de {self._capacidad}{RESET}{AMARILLO} ubicado en {self._ubicacion}{RESET}"
+        return f"{CYAN}{self._id_espacio}:[Cancha] - {RESET}{VERDE} {self._nombre} con capacidad de {self._capacidad}{RESET}{AMARILLO} ubicado en {self._ubicacion}{RESET}"

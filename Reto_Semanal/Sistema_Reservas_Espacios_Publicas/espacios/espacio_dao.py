@@ -7,12 +7,19 @@ from .salon import Salon
 class EspacioDAO:
     _SELECT = "SELECT * FROM espacios ORDER BY id;"
     _SELECT_SEARCH_ID_EVENT = "SELECT * FROM espacios WHERE id = %s"
+    _SELECT_ESPACIOS_DISPONIBLES = """
+        SELECT e.*
+        FROM espacios AS e
+        LEFT JOIN Reservas AS r ON e.id = r.espacio_id
+        WHERE r.espacio_id is NULL
+            OR r.fecha > NOW();
+    """
     _INSERTAR = (
         "INSERT INTO espacios (tipo, nombre, capacidad, ubicacion)"
         "VALUES (%s, %s, %s, %s);"
     )
     _ACTUALIZAR = (
-        "UPDATE espacios SET tipo=%s, nombre=%s, capacidad=%s, ubicacion=%s"
+        "UPDATE espacios SET tipo=%s, nombre=%s, capacidad=%s, ubicacion=%s "
         "WHERE id = %s;"
     )
     _ELIMINAR = "DELETE FROM espacios WHERE id = %s"
@@ -32,7 +39,15 @@ class EspacioDAO:
             cursor.execute(cls._SELECT_SEARCH_ID_EVENT, valores)
             resultado = cursor.fetchone()
             log.debug("Buscando eventos por id_evento")
-            return cls._construir_evento_desde_fila(resultado) if resultado else None
+            return cls._distribuir_espacios_por_tipo(resultado) if resultado else None
+
+    @classmethod
+    def seleccionar_espacios_disponibles(cls):
+        with CursorDelPool() as cursor:
+            cursor.execute(cls._SELECT_ESPACIOS_DISPONIBLES)
+            resultados = cursor.fetchall()
+            log.debug("Seleccionando la tabla de espacios")
+            return (cls._distribuir_espacios_por_tipo(fila) for fila in resultados)
 
     @classmethod
     def insertar(cls, espacio: dict):
@@ -46,7 +61,7 @@ class EspacioDAO:
     def actualizar(cls, espacio: dict):
         with CursorDelPool() as cursor:
             valores = (espacio["tipo"], espacio["nombre"], espacio["capacidad"], espacio["ubicacion"], espacio["id_espacio"])
-            cursor.execute(cls._INSERTAR, valores)
+            cursor.execute(cls._ACTUALIZAR, valores)
             log.debug(f"Espacio Actualizado: {espacio}")
             return cursor.rowcount
 
